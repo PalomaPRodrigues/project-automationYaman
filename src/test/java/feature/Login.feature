@@ -5,7 +5,9 @@
 #version: 1.0
 
 Funcionalidade:
-
+Como um usuario do site brilhoso
+Quero fazer login
+Para  que eu possa realizar compras
 
 Esquema do Cenario: Login com sucesso
 Dado que estou na pagina home do site
@@ -18,3 +20,5 @@ Entao valido se estou logado com sucesso
 Exemplos:
 |email                     |senha  |
 |paloma.gpedro@hotmail.com |pwd1222|
+
+

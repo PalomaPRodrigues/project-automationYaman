@@ -7,15 +7,12 @@ import cucumber.api.SnippetType;
 import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
-@CucumberOptions(	features = "src/test/java/feature/login.feature",
-					glue = {""},
-					plugin = {"pretty"},
-					monochrome = true,
-					snippets = SnippetType.CAMELCASE,
+@CucumberOptions(features = "src/test/java/feature/login.feature", glue = { "" },
+					plugin = { "pretty","html:reports" }, 
+					monochrome = true, 
+					snippets = SnippetType.CAMELCASE, 
 					dryRun = false
-					
-				
-				
+
 )
 
 public class LoginRunner {

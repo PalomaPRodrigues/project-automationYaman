@@ -9,14 +9,11 @@ import cucumber.api.junit.Cucumber;
 @RunWith(Cucumber.class)
 @CucumberOptions(	features = "src/test/java/feature/cadastro.feature",
 					glue = {""},
-					plugin = {"pretty"},
+					plugin =  { "pretty","html:reports" },
 					monochrome = true,
 					snippets = SnippetType.CAMELCASE,
 					dryRun = false
 )
-
-
-
 public class CadastroRunner {
 
 }

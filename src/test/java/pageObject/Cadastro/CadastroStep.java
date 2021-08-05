@@ -20,13 +20,13 @@ public class CadastroStep {
 	}
 
 	@Dado("^seleciono cadastre se$")
-	public void selecionoCadastreSe() {
+	public void selecionoCadastreSe() throws InterruptedException {
 		cadastroLogic.selecionarCadastrar();
 
 	}
 
 	@Dado("^preencho e-mail \"([^\"]*)\"$")
-	public void preenchoEMail(String email) throws InterruptedException {
+	public void preenchoEMail(String email) {
 		cadastroLogic.preencherEmail(email);
 
 	}

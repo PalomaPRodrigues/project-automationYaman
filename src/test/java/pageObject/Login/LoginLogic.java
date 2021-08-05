@@ -1,5 +1,7 @@
 package pageObject.Login;
 
+import org.openqa.selenium.By;
+
 import drive.DriverFactory;
 
 public class LoginLogic extends DriverFactory {
@@ -15,6 +17,13 @@ public class LoginLogic extends DriverFactory {
 		navega("https://www.brilhoso.com.br/");
 	}
 	
+	public static void tempoDeEspera(long by) {
+		try {
+		Thread.sleep(by);
+	} catch (InterruptedException ex) {
+		ex.printStackTrace();
+	}
+	}
 
 	public void clicarEntrar() {
 		loginPage.getBtnEntrar().findElement(driver).click();
@@ -35,9 +44,15 @@ public class LoginLogic extends DriverFactory {
 		
 	}
 	
-	public void ValidarMensagem() {
-		
-		
-	}
-
+//	public void ValidarMensagem() {
+//		try {
+//			tempoDeEspera(loginPage.getValidaMsg());
+//			assertTrue((loginPage.getValidaMsg()));
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//	}
 }
+
+		
+		

@@ -27,6 +27,7 @@ E preencho confirmar senha "<confirmarSenha>"
 Quando clico enviar
 Entao valido cadastro com sucesso
 
+
 Exemplos:
 |email									|tipoCadastro |cpf        |uf        |rg       |nome  |sobrenome|dataNascimento|genero  |senha |confirmarSenha|
-|paloma.gpedro@gmail.com|Pessoa fisica|12345678910|SP        |123456789|Paloma|Pedro    |22/07/1994    |Feminino|pwd123|pwd123        |
+|paloma.gpedro@gmail.com|Pessoa física|12345678910|SP        |123456789|Paloma|Pedro    |22/07/1994    |Feminino|pwd123|pwd123        |
