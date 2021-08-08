@@ -35,10 +35,12 @@ public class LoginStep {
 	public void clicoSubmit() {
 		loginLogic.clicarBtnSubmit();
 	}
-
-	@Entao("^valido se estou logado com sucesso$")
-	public void validoSeEstouLogadoComSucesso(){
-	    
+   
+	@Entao("^valido login com sucesso \"([^\"]*)\"$")
+	public void validoLoginComSucesso(String msgFinal)  {
+		loginLogic.validoMsg(msgFinal);
+	   
 	}
+	
 
 }

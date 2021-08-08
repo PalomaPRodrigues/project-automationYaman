@@ -3,12 +3,17 @@ package pageObject.Login;
 import org.openqa.selenium.By;
 
 public class LoginPage {
-	
+	private String txtVisivel = "//*[contains(text(),'%1$s')]";
 	private By btnEntrar = By.xpath("(//*[contains(text(),'Entrar')])[1]");
 	private By cmpEmail = By.xpath("//*[@id='email']");
 	private By cmpSenha = By.id("pass");
 	private By btnSubmit = By.xpath("(//*[text()='Entrar'])[2]");
-	private By validamsg = By.xpath("//*[text()='Informações de Contato']");
+	
+	
+	public String getTxtVisivel() {
+		return txtVisivel;
+	}
+
 	
 	public By getBtnEntrar() {
 		return btnEntrar;
@@ -26,7 +31,4 @@ public class LoginPage {
 		return btnSubmit;
 	}
 	
-	public By getValidaMsg() {
-		return validamsg;
-	}
 }

@@ -44,7 +44,8 @@ public class CadastroStep {
 
 	@Dado("^seleciono Uf \"([^\"]*)\"$")
 	public void selecionoEstadoDoRg(String uf) {
-		
+		cadastroLogic.selecionarUf(uf);
+
 	}
 
 	@Dado("^preencho rg \"([^\"]*)\"$")
@@ -55,7 +56,8 @@ public class CadastroStep {
 
 	@Dado("^preencho nome \"([^\"]*)\"$")
 	public void preenchoNome(String nome) {
-		cadastroLogic.preencherNome(nome);;
+		cadastroLogic.preencherNome(nome);
+
 	}
 
 	@Dado("^preencho sobrenome \"([^\"]*)\"$")
@@ -67,38 +69,42 @@ public class CadastroStep {
 	@Dado("^preencho data de nascimento \"([^\"]*)\"$")
 	public void preenchoDataDeNascimento(String dataNascimento) {
 		cadastroLogic.preencherDataNascimento(dataNascimento);
-		
 
 	}
 
 	@Dado("^seleciono genero \"([^\"]*)\"$")
 	public void selecionoGenero(String genero) {
+		cadastroLogic.selecionarGenero(genero);
 
 	}
 
 	@Dado("^clico em receber ofertas$")
 	public void clicoEmReceberOfertas() {
+		cadastroLogic.ClicarReceberOfertas();
 
 	}
 
 	@Dado("^preencho senha \"([^\"]*)\"$")
 	public void preenchoSenha(String senha) {
+		cadastroLogic.preencherSenha(senha);;
 
 	}
 
 	@Dado("^preencho confirmar senha \"([^\"]*)\"$")
 	public void preenchoConfirmarSenha(String confirmarSenha) {
+		cadastroLogic.preencherConfirmarSenha(confirmarSenha);
 
 	}
 
 	@Quando("^clico enviar$")
 	public void clicoEnviar() {
+		cadastroLogic.clicarEnviar();
 
 	}
 
-	@Entao("^valido cadastro com sucesso$")
-	public void validoCadastroComSucesso() {
-
+	@Entao("^valido cadastro realizado com sucesso \"([^\"]*)\"$")
+	public void validoCadastroComSucesso(String msgFinal) {
+		cadastroLogic.validoMsg(msgFinal);
 	}
 
 }

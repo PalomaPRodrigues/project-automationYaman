@@ -1,6 +1,9 @@
 package pageObject.Login;
 
+import static org.junit.Assert.assertTrue;
+
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
 
 import drive.DriverFactory;
 
@@ -44,15 +47,11 @@ public class LoginLogic extends DriverFactory {
 		
 	}
 	
-//	public void ValidarMensagem() {
-//		try {
-//			tempoDeEspera(loginPage.getValidaMsg());
-//			assertTrue((loginPage.getValidaMsg()));
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//	}
-}
+	public void validoMsg(String msgFinal) {
+		String cmpValidacao = String.format(loginPage.getTxtVisivel(), msgFinal);
+		tempoDeEspera(5000);
+		WebElement xpathMsg = driver.findElement(By.xpath(cmpValidacao));
+		assertTrue(xpathMsg.isDisplayed());
+	}
 
-		
-		
+}

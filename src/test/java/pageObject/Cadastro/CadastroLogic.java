@@ -1,15 +1,15 @@
 package pageObject.Cadastro;
 
+import static org.junit.Assert.assertTrue;
+
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import drive.DriverFactory;
 
 public class CadastroLogic extends DriverFactory {
 
-	protected static WebDriverWait wait;
 	private CadastroPage cadastroPage;
 
 	public CadastroLogic() {
@@ -20,18 +20,8 @@ public class CadastroLogic extends DriverFactory {
 	public void navega() {
 		navega("https://www.brilhoso.com.br/");
 	}
-	
-	public static void tempoDeEspera(int iTimeInMillis) {
-		try {
-		Thread.sleep(iTimeInMillis);
-	} catch (InterruptedException ex) {
-		ex.printStackTrace();
-	}
-}
-		
 
 	public void selecionarCadastrar() {
-//    wait.until(ExpectedConditions.elementToBeClickable(cadastroPage.getBtnCadastre()));
 		cadastroPage.getBtnCadastre().findElement(driver).click();
 		tempoDeEspera(500);
 
@@ -41,8 +31,6 @@ public class CadastroLogic extends DriverFactory {
 		cadastroPage.getCmpEmail().findElement(driver).sendKeys(email);
 		tempoDeEspera(500);
 	}
-
-	
 
 	public void selecionarTipoCadastro(String tipoCadastro) {
 		WebElement comboElement = driver.findElement(cadastroPage.getCboxTipocadastro());
@@ -94,24 +82,24 @@ public class CadastroLogic extends DriverFactory {
 		WebElement comboElement = driver.findElement(cadastroPage.getCboxGenero());
 		Select combo = new Select(comboElement);
 		combo.selectByVisibleText(genero);
-		tempoDeEspera(1000);
+		tempoDeEspera(500);
 
 	}
 
 	public void ClicarReceberOfertas() {
 		cadastroPage.getBtnReceberOfertas().findElement(driver).click();
-		tempoDeEspera(500);
+		tempoDeEspera(600);
 
 	}
 
 	public void preencherSenha(String senha) {
 		cadastroPage.getCmpSenha().findElement(driver).sendKeys(senha);
-		tempoDeEspera(500);
+		tempoDeEspera(600);
 
 	}
 
 	public void preencherConfirmarSenha(String confirmarSenha) {
-		cadastroPage.getCmpSenha().findElement(driver).sendKeys(confirmarSenha);
+		cadastroPage.getCmpConfirmarSenha().findElement(driver).sendKeys(confirmarSenha);
 		tempoDeEspera(500);
 
 	}
@@ -121,14 +109,10 @@ public class CadastroLogic extends DriverFactory {
 		tempoDeEspera(500);
 	}
 
-//	public void validoMsg () {
-//		try {
-//			tempoDeEspera(cadastroPage.get);
-//			assertTrue(estaVisivel(cadastroPage.getValidoCadastro()));
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//	}
+	public void validoMsg(String msgFinal) {
+		String cmpValidacao = String.format(cadastroPage.getTxtVisivel(), msgFinal);
+		tempoDeEspera(5000);
+		WebElement xpathMsg = driver.findElement(By.xpath(cmpValidacao));
+		assertTrue(xpathMsg.isDisplayed());
 	}
-
-
+}

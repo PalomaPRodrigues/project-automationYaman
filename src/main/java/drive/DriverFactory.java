@@ -26,13 +26,11 @@ public class DriverFactory {
 
 		return driver;
 	}
-	
 
 	public void navega(String url) {
 		DriverFactory.createChrome().get(url);
 	}
 
-	
 	public void screenshot(String status, String nomeTeste) {
 		try {
 			TakesScreenshot fonte = (TakesScreenshot) DriverFactory.createChrome();
@@ -43,7 +41,15 @@ public class DriverFactory {
 			System.out.println("Erro na Escrita de arquivo.");
 		}
 	}
-	
+
+	public static void tempoDeEspera(int iTimeInMillis) {
+		try {
+			Thread.sleep(iTimeInMillis);
+		} catch (InterruptedException ex) {
+			ex.printStackTrace();
+		}
+	}
+
 	public static void encerraDriver() {
 
 		if (driver != null) {

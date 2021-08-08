@@ -25,9 +25,9 @@ E clico em receber ofertas
 E preencho senha "<senha>"
 E preencho confirmar senha "<confirmarSenha>"
 Quando clico enviar
-Entao valido cadastro com sucesso
+Entao valido cadastro realizado com sucesso "<msgFinal>"
 
 
 Exemplos:
-|email									|tipoCadastro |cpf        |uf        |rg       |nome  |sobrenome|dataNascimento|genero  |senha |confirmarSenha|
-|paloma.gpedro@gmail.com|Pessoa física|12345678910|SP        |123456789|Paloma|Pedro    |22/07/1994    |Feminino|pwd123|pwd123        |
+|email						     |tipoCadastro |cpf           |uf|rg       |nome  |sobrenome|dataNascimento|genero  |senha  |confirmarSenha|msgFinal                                                                  |
+|teste1@gmail.com			 |Pessoa física|471.690.810-08|SP|456785675|Testes|Teste    |02/07/1994    |Feminino|pwd1223|pwd1223       |Obrigado por se registrar na Brilhoso - Produtos para Estética Automotiva.|
