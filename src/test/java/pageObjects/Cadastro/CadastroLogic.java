@@ -1,8 +1,5 @@
-package pageObject.Cadastro;
+package pageObjects.Cadastro;
 
-import static org.junit.Assert.assertTrue;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -15,10 +12,6 @@ public class CadastroLogic extends DriverFactory {
 	public CadastroLogic() {
 		cadastroPage = new CadastroPage();
 
-	}
-
-	public void navega() {
-		navega("https://www.brilhoso.com.br/");
 	}
 
 	public void selecionarCadastrar() {
@@ -109,10 +102,4 @@ public class CadastroLogic extends DriverFactory {
 		tempoDeEspera(500);
 	}
 
-	public void validoMsg(String msgFinal) {
-		String cmpValidacao = String.format(cadastroPage.getTxtVisivel(), msgFinal);
-		tempoDeEspera(5000);
-		WebElement xpathMsg = driver.findElement(By.xpath(cmpValidacao));
-		assertTrue(xpathMsg.isDisplayed());
-	}
 }

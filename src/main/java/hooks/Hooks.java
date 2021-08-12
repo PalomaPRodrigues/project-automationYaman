@@ -8,7 +8,7 @@ import drive.DriverFactory;
 public class Hooks extends DriverFactory{
 	@Before
 	public static void inicializaBrowser(Scenario teste) {
-		System.err.println("inicio do teste:" + teste.getName());
+		System.out.println("inicio do teste: " + teste.getName());
 	}
 	
 

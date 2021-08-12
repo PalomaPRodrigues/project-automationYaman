@@ -5,7 +5,7 @@
 #version: 1.0
 
 
-Funcionalidade: Validar se o usuario está logado
+Funcionalidade: Login com sucesso
 	Como um usuario do site brilhoso
 	Quero fazer login
 	Para  que eu possa realizar compras
@@ -16,11 +16,11 @@ Esquema do Cenario: Login com sucesso
 	E preencho campo e-mail "<email>"
 	E preencho campo senha "<senha>"
 	Quando seleciono entrar
-	Entao valido login com sucesso "<msgFinal>"
+	Entao valido mensagem final com sucesso "<msgFinal>"
 
 	Exemplos:
-	|email                     |senha  |msgFinal|
-	|paloma.gpedro@hotmail.com |pwd1222|Informações de Contato				|
+	|email                     |senha  |msgFinal              |
+	|paloma.gpedro@hotmail.com |pwd1222|Informações de Contato|
 	
 	
 

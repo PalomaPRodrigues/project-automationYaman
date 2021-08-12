@@ -1,46 +1,37 @@
-package pageObject.Login;
+package pageObjects.Login;
 
 import cucumber.api.java.pt.Dado;
-import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
 
 public class LoginStep {
-	
+
 	private LoginLogic loginLogic;
-	
+
 	public LoginStep() {
-		loginLogic  = new LoginLogic();
-		
+		loginLogic = new LoginLogic();
+
 	}
 
 	@Dado("^clico entrar$")
 	public void clicoEntrar() {
 		loginLogic.clicarEntrar();
-		
+
 	}
-	
+
 	@Dado("^preencho campo e-mail \"([^\"]*)\"$")
-	public void preenchoCampoEMail(String email)  {
+	public void preenchoCampoEMail(String email) {
 		loginLogic.preencherEmail(email);
-	    
+
 	}
 
 	@Dado("^preencho campo senha \"([^\"]*)\"$")
 	public void preenchoCampoSenha(String senha) {
 		loginLogic.preencherSenha(senha);
 	}
-	    
-	   
+
 	@Quando("^seleciono entrar$")
 	public void clicoSubmit() {
 		loginLogic.clicarBtnSubmit();
 	}
-   
-	@Entao("^valido login com sucesso \"([^\"]*)\"$")
-	public void validoLoginComSucesso(String msgFinal)  {
-		loginLogic.validoMsg(msgFinal);
-	   
-	}
-	
 
 }

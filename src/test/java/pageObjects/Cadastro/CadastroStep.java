@@ -1,7 +1,6 @@
-package pageObject.Cadastro;
+package pageObjects.Cadastro;
 
 import cucumber.api.java.pt.Dado;
-import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
 
 public class CadastroStep {
@@ -13,14 +12,8 @@ public class CadastroStep {
 
 	}
 
-	@Dado("^que estou na pagina home do site$")
-	public void queEstouNaPaginaHomeDoSite() {
-		cadastroLogic.navega();
-
-	}
-
 	@Dado("^seleciono cadastre se$")
-	public void selecionoCadastreSe() throws InterruptedException {
+	public void selecionoCadastreSe() {
 		cadastroLogic.selecionarCadastrar();
 
 	}
@@ -86,7 +79,8 @@ public class CadastroStep {
 
 	@Dado("^preencho senha \"([^\"]*)\"$")
 	public void preenchoSenha(String senha) {
-		cadastroLogic.preencherSenha(senha);;
+		cadastroLogic.preencherSenha(senha);
+		;
 
 	}
 
@@ -100,11 +94,6 @@ public class CadastroStep {
 	public void clicoEnviar() {
 		cadastroLogic.clicarEnviar();
 
-	}
-
-	@Entao("^valido cadastro realizado com sucesso \"([^\"]*)\"$")
-	public void validoCadastroComSucesso(String msgFinal) {
-		cadastroLogic.validoMsg(msgFinal);
 	}
 
 }

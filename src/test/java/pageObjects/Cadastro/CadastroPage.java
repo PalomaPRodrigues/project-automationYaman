@@ -1,10 +1,8 @@
-package pageObject.Cadastro;
+package pageObjects.Cadastro;
 
 import org.openqa.selenium.By;
 
 public class CadastroPage {
-	
-	private String txtVisivel = "//*[contains(text(),'%1$s')]";
 
 	private By btnCadastre = By.xpath("//a[@class='register']");
 	private By cmpEmail = By.id("email_address");
@@ -20,10 +18,6 @@ public class CadastroPage {
 	private By cmpSenha = By.id("password");
 	private By cmpConfirmarSenha = By.id("confirmation");
 	private By btnEnviar = By.xpath("//span[text()='Enviar']");
-	
-	public String getTxtVisivel() {
-		return txtVisivel;
-	}
 
 	public By getBtnCadastre() {
 		return btnCadastre;
