@@ -99,7 +99,7 @@ public class CadastroLogic extends DriverFactory {
 
 	public void clicarEnviar() {
 		cadastroPage.getBtnEnviar().findElement(driver).click();
-		tempoDeEspera(500);
+		tempoDeEspera(600);
 	}
 
 }
